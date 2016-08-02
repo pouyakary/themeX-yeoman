@@ -1,0 +1,10 @@
+{
+    "name": "<%= name %>-themex-test",
+    "version": "0.0.1",
+    "scripts": {
+        "test": "themex test"
+    },
+    "dependencies": {
+        "themex": "*"
+    }
+}

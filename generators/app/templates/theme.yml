@@ -1,0 +1,115 @@
+---
+#
+# ─── BASE INFO ──────────────────────────────────────────────────────────────────
+#
+
+version: 0.0.1
+description: <%= description %>
+author: <%= author %>
+colorSpaceName: sRGB
+
+#
+# ─── THEMES ─────────────────────────────────────────────────────────────────────
+#
+
+themes:
+<%= themes %>
+
+#
+# ─── SCOPES ─────────────────────────────────────────────────────────────────────
+#
+
+#
+# these are some of the key rules, you have to have them all.
+# for a good theme you have to add more specific rules...
+#
+
+rules:
+  - name: Operators
+    scope: keyword.operator
+    color: # your color
+
+  - name: Strings
+    scope: string
+    color: # your color
+
+  - name: Number
+    scope: constant.numeric
+    color: # your color
+
+  - name: Built-in constant
+    scope: constant.language
+    color: # your color
+
+  - name: User-defined constant
+    scopes:
+      - constant.character
+      - constant.other
+    color: # your color
+
+  - name: Variable
+    scope: variable
+    color: # your color
+
+  - name: Keyword
+    scope: keyword
+    color: # your color
+
+  - name: Storage
+    scope: storage
+    color: # your color
+
+  - name: Storage type
+    scope: storage.type
+    color: # your color
+
+  - name: Class name
+    scope: entity.name.class
+    color: # your color
+
+  - name: Inherited class
+    scope: entity.other.inherited-class
+    color: # your color
+
+  - name: Function name
+    scope: entity.name.function
+    color: # your color
+
+  - name: Function argument
+    scope: variable.parameter
+    color: # your color
+
+  - name: Library function
+    scope: support.function
+    color: # your color
+
+  - name: Library constant
+    scope: support.constant
+    color: # your color
+
+  - name: Library class/type
+    scopes:
+      - support.type
+      - support.class
+    color: # your color
+
+  - name: Library variable
+    scope: support.other.variable
+    color: # your color
+
+  - name: Invalid
+    scope: invalid
+    color: # your color
+    background: # your color
+
+  - name: Invalid deprecated
+    scope: invalid.deprecated
+    color: # your color
+    background: # your color
+
+  - name: Markup Headings
+    scope: markup.heading
+    color: # your color
+
+
+# ────────────────────────────────────────────────────────────────────────────────
