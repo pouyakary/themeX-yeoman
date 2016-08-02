@@ -1,8 +1,8 @@
 {
   "name": "generator-themex",
   "version": "0.0.0",
-  "description": "themeX project generator",
-  "homepage": "https://github.com/karyfoundation/themeX-yoman",
+  "description": "Generates themeX project structur",
+  "homepage": "https://github.com/karyfoundation/themeX-yeoman",
   "author": {
     "name": "Kary Foundation",
     "email": "mail@karyfoundation.org",
@@ -17,8 +17,9 @@
     "yeoman-generator"
   ],
   "dependencies": {
+    "colors": "^1.1.2",
+    "uuid": "^2.0.2",
     "yeoman-generator": "^0.23.0",
-    "chalk": "^1.0.0",
     "yosay": "^1.0.0"
   },
   "devDependencies": {
@@ -41,7 +42,7 @@
       "mocha": true
     }
   },
-  "repository": "karyfoundation/generator-themex",
+  "repository": "https://github.com/karyfoundation/themeX-yoman.git",
   "scripts": {
     "prepublish": "gulp prepublish",
     "test": "gulp"
