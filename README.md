@@ -1,3 +1,5 @@
+[![](http://www.karyfoundation.org/developer/dead-repo/gitbadge.png)](http://www.karyfoundation.org/developer/dead-repo/)
+
 # generator-themex [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > themeX project generator
 
@@ -34,3 +36,6 @@ Apache-2.0 © [Kary Foundation](www.karyfoundation.org)
 [travis-url]: https://travis-ci.org/karyfoundation/generator-themex
 [daviddm-image]: https://david-dm.org/karyfoundation/generator-themex.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/karyfoundation/generator-themex
+
+[![](http://www.karyfoundation.org/developer/dead-repo/gitbadge.png)](http://www.karyfoundation.org/developer/dead-repo/)
+
