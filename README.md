@@ -38,4 +38,3 @@ Apache-2.0 © [Kary Foundation](www.karyfoundation.org)
 [daviddm-url]: https://david-dm.org/karyfoundation/generator-themex
 
 [![](http://www.karyfoundation.org/developer/dead-repo/gitbadge.png)](http://www.karyfoundation.org/developer/dead-repo/)
-
