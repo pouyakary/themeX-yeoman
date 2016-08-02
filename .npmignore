@@ -1,0 +1,6 @@
+node_modules
+.vscode
+.travis.yml
+.gitignore
+.editorconfig
+.gitattributes
