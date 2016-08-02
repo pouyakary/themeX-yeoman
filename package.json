@@ -3,11 +3,7 @@
   "version": "0.0.0",
   "description": "Generates themeX project structur",
   "homepage": "https://github.com/karyfoundation/themeX-yeoman",
-  "author": {
-    "name": "Kary Foundation",
-    "email": "mail@karyfoundation.org",
-    "url": "www.karyfoundation.org"
-  },
+  "author": "pmkary",
   "files": [
     "generators"
   ],
@@ -42,10 +38,6 @@
       "mocha": true
     }
   },
-  "repository": "https://github.com/karyfoundation/themeX-yoman.git",
-  "scripts": {
-    "prepublish": "gulp prepublish",
-    "test": "gulp"
-  },
+  "repository": "https://github.com/karyfoundation/themeX-yeoman.git",
   "license": "Apache-2.0"
 }
