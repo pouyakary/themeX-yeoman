@@ -1,6 +1,6 @@
 {
   "name": "generator-themex",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Generates themeX project structur",
   "homepage": "https://github.com/karyfoundation/themeX-yeoman",
   "author": "pmkary",

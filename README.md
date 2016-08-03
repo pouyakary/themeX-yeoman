@@ -1,6 +1,9 @@
 # themeX yeoman generator
 This module provides a project generator for [themeX](https://github.com/karyfoundation/themeX) so that you can easily build a project.
 
+![screen shot 2016-08-03 at 5 25 58 am](https://cloud.githubusercontent.com/assets/2157285/17358110/634d9c88-5975-11e6-9429-e79fd613fca5.jpg)
+
+
 ## Whats included?
 - It generates a base file with generated UUIDS and all the necessary structure (so you don't have to worry about the rest)
 - It provides a Travis CI configuration using NPM so that you can test your themes on the cloud...
