@@ -19,10 +19,18 @@
     var colors  = require('colors');
     var yosay   = require('yosay');
     var path    = require('path');
+    var yaml    = require('js-yaml');
+    var uuid    = require('uuid');
 
 //
 // ─── DEFS ───────────────────────────────────────────────────────────────────────
 //
+
+    var modes = [
+        'A light theme',
+        'A dark theme',
+        'Both light and dark themes'
+    ];
 
     let prompts = [
         {
@@ -54,13 +62,12 @@
             type: 'list',
             name: 'mode',
             message: 'What starting theme modes you want?',
-            choices: [
-                'A dark theme',
-                'A light theme',
-                'Both light and dark themes'
-            ]
+            choices: modes
         }
     ];
+
+    const colorPlaceholder = 'yeoman-themeX-color-placeholder';
+    const variablePlaceholder = 'yeoman-themeX-var-placeholder';
 
 //
 // ─── MAIN ───────────────────────────────────────────────────────────────────────
@@ -91,6 +98,7 @@
                     { title: this.props.name }
                 );
 
+                // Travis CI test tools...
                 this.fs.copyTpl(
                     this.templatePath('package.json'),
                     this.destinationPath('package.json'),
@@ -102,13 +110,17 @@
                     this.destinationPath('.travis.yml')
                 )
 
+                // main theme...
                 this.fs.copyTpl(
                     this.templatePath('theme.yml'),
                     this.destinationPath(
-                        path.join( this.props.filename,
-                            path.join( '.themeX', 'theme.yml' )
-                    )),
-                    generateThemeXFile( this.props )
+                        this.props.filename + path.join( '.themeX', 'theme.yml' )
+                    ),
+                    {
+                        description: this.props.description,
+                        author: this.props.author,
+                        themes: generateThemes( this.props )
+                    }
                 );
             },
 
@@ -142,23 +154,91 @@
     }
 
 //
-// ─── GENERATE THEMEX FILE ───────────────────────────────────────────────────────
-//
-
-    function generateThemeXFile ( props ) {
-        return {
-            description: props.description,
-            author: props.author,
-            themes: generateThemes( props )
-        }
-    }
-
-//
 // ─── GENERATE THEMES ────────────────────────────────────────────────────────────
 //
 
     function generateThemes ( props ) {
-        return props.mode.toString( );
+        var themes = [ ];
+        let currentMode = findIndex( modes, props.mode );
+
+        if ( currentMode === 0 ) {
+            themes.push( makeThemeForMode( 0, props ) );
+        } else if ( currentMode === 1 ) {
+            themes.push( makeThemeForMode( 1, props ) );
+        } else {
+            themes.push( makeThemeForMode( 0, props ) );
+            themes.push( makeThemeForMode( 1, props ) );
+        }
+
+        return composeThemesIntoYaml( themes );
+    }
+
+//
+// ─── COMPOSE THEMES ─────────────────────────────────────────────────────────────
+//
+
+    function composeThemesIntoYaml ( themes ) {
+        return fixYaml( yaml.safeDump( themes, {
+            indent: 2
+        }));
+    }
+
+//
+// ─── FIX YAML ───────────────────────────────────────────────────────────────────
+//
+
+    function fixYaml ( yml ) {
+        return indent( yml
+            .replace( /yeoman-themeX-color-placeholder/g, '# Color' )
+            .replace( /yeoman-themeX-var-placeholder/g, '# Define' )
+        );
+    }
+
+//
+// ─── INDENT ─────────────────────────────────────────────────────────────────────
+//
+
+    function indent ( text ) {
+        return text.split('\n').map( line => `  ${ line }`).join('\n');
+    }
+
+//
+// ─── FIND INDEX ─────────────────────────────────────────────────────────────────
+//
+
+    function findIndex ( array, element ) {
+        for ( let index in array ) {
+            if ( array[ index ] === element ) {
+                return index;
+            }
+        }
+        return 0;
+    }
+
+//
+// ─── MAKE THEME FOR MODE ────────────────────────────────────────────────────────
+//
+
+    function makeThemeForMode ( mode, props ) {
+        let modeText = ( mode === 0 )? 'Light' : 'Dark';
+        return {
+            name: `${ props.name } - ${ modeText }`,
+            uuid: uuid.v4( ),
+            baseColor: modeText.toLowerCase( ),
+            colors: {
+                color1:         variablePlaceholder,
+                color2:         variablePlaceholder
+            },
+            settings: {
+                background:     colorPlaceholder,
+                caret:          colorPlaceholder,
+                foreground:     colorPlaceholder,
+                invisibles:     colorPlaceholder,
+                lineHighlight:  colorPlaceholder,
+                selection:      colorPlaceholder,
+                comment:        colorPlaceholder
+            }
+        }
     }
 
 // ────────────────────────────────────────────────────────────────────────────────
