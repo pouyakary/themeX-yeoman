@@ -117,6 +117,7 @@
                         this.props.filename + path.join( '.themeX', 'theme.yml' )
                     ),
                     {
+                        title: this.props.name,
                         description: this.props.description,
                         author: this.props.author,
                         themes: generateThemes( this.props )
