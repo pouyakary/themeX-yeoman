@@ -158,19 +158,20 @@
 //
 
     function generateThemes ( props ) {
-        var themes = [ ];
-        let currentMode = findIndex( modes, props.mode );
+        var themeArray = [ ];
 
-        if ( currentMode === 0 ) {
-            themes.push( makeThemeForMode( 0, props ) );
-        } else if ( currentMode === 1 ) {
-            themes.push( makeThemeForMode( 1, props ) );
-        } else {
-            themes.push( makeThemeForMode( 0, props ) );
-            themes.push( makeThemeForMode( 1, props ) );
+        if ( props.mode === modes[ 0 ] ) {
+            themeArray.push( makeThemeForMode( 0, props ) );
+
+        } else if ( props.mode === modes[ 1 ] ) {
+            themeArray.push( makeThemeForMode( 1, props ) );
+
+        } else if ( props.mode === modes[ 2 ] ) {
+            themeArray.push( makeThemeForMode( 0, props ) );
+            themeArray.push( makeThemeForMode( 1, props ) );
         }
 
-        return composeThemesIntoYaml( themes );
+        return composeThemesIntoYaml( themeArray );
     }
 
 //
@@ -199,7 +200,7 @@
 //
 
     function indent ( text ) {
-        return text.split('\n').map( line => `  ${ line }`).join('\n');
+        return text.split('\n').map( line => '  ' + line ).join('\n');
     }
 
 //
@@ -208,11 +209,8 @@
 
     function findIndex ( array, element ) {
         for ( let index in array ) {
-            if ( array[ index ] === element ) {
-                return index;
-            }
+            if ( array[ index ] === element ) return index;
         }
-        return 0;
     }
 
 //
