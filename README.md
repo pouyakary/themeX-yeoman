@@ -1,40 +1,18 @@
-[![](http://www.karyfoundation.org/developer/dead-repo/gitbadge.png)](http://www.karyfoundation.org/developer/dead-repo/)
+# themeX yeoman generator
+This module provides a project generator for [themeX](https://github.com/karyfoundation/themeX) so that you can easily build a project.
 
-# generator-themex [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> themeX project generator
+## Whats included?
+- It generates a base file with generated UUIDS and all the necessary structure (so you don't have to worry about the rest)
+- It provides a Travis CI configuration using NPM so that you can test your themes on the cloud...
 
-## Installation
-
-First, install [Yeoman](http://yeoman.io) and generator-themex using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
-
-```bash
-npm install -g yo
-npm install -g generator-themex
+## How to...
+You don't have to!! it installs automatically with the main themeX package as a dependency. If you have themeX, you can just go run
 ```
-
-Then generate your new project:
-
-```bash
-yo themex
+% yo themex
 ```
+And you have it! It's all it takes to generate you're badass awesome themeX file!
 
-## Getting To Know Yeoman
-
- * Yeoman has a heart of gold.
- * Yeoman is a person with feelings and opinions, but is very easy to work with.
- * Yeoman can be too opinionated at times but is easily convinced not to be.
- * Feel free to [learn more about Yeoman](http://yeoman.io/).
-
-## License
-
-Apache-2.0 © [Kary Foundation](www.karyfoundation.org)
-
-
-[npm-image]: https://badge.fury.io/js/generator-themex.svg
-[npm-url]: https://npmjs.org/package/generator-themex
-[travis-image]: https://travis-ci.org/karyfoundation/generator-themex.svg?branch=master
-[travis-url]: https://travis-ci.org/karyfoundation/generator-themex
-[daviddm-image]: https://david-dm.org/karyfoundation/generator-themex.svg?theme=shields.io
-[daviddm-url]: https://david-dm.org/karyfoundation/generator-themex
-
-[![](http://www.karyfoundation.org/developer/dead-repo/gitbadge.png)](http://www.karyfoundation.org/developer/dead-repo/)
+<br/>
+<a href="http://www.karyfoundation.org/">
+    <img src="http://www.karyfoundation.org/foundation/logo/github-full-horse.png" width="250"/>
+</a>
